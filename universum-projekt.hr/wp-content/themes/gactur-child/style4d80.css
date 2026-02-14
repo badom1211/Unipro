@@ -1,0 +1,35 @@
+/*
+Theme Name: Gactur Child
+Author: ThemesCamp
+Author URI:  http://themeforest.net/user/themescamp
+Theme URI: http://themeforest.net/user/themescamp/portfolio
+Template: gactur
+Description: This is child theme for gactur Theme.
+Version: 1.0.0
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: gactur-child
+Tags: one-column, two-columns, right-sidebar,custom-colors,featured-images
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&amp;display=swap');
+
+.lines:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 117%;
+    background: #897061;
+    margin-left: -20px;
+}
+.lines:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 110%;
+    height: 2px;
+    background: #897061;
+    bottom: 0px;
+    left: -10%;
+}

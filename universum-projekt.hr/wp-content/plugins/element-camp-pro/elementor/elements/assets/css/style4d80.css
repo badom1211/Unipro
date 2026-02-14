@@ -1,0 +1,1132 @@
+/* ==============================================================================================================================
+														[ * Helper ]
+===============================================================================================================================*/
+/* ==============================================================================================================================
+														[ * Nav ]
+===============================================================================================================================*/
+.tcg-builder-menu ul > li {
+  list-style: none;
+}
+
+.tcg-nav .fat-nav {
+  height: 100vh;
+  position: fixed;
+}
+.tcg-nav .hamburger.active {
+  position: fixed;
+  top: 45px;
+  right: 15px;
+  left: unset;
+}
+
+/* ==============================================================================================================================
+														[ * Button animate ]
+===============================================================================================================================*/
+/*-------------------------------------  Button Style  -----------------------------------------*/
+.tcgbase-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #212529;
+  color: #fff;
+  overflow: hidden;
+}
+.tcgbase-button.animated-gradient-bg::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  z-index: 1;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #0c3df4), color-stop(45%, #02b5ff), color-stop(#02b5ff), to(#0c3df4));
+  background: -webkit-linear-gradient(left, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
+  background: -o-linear-gradient(left, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
+  background: linear-gradient(to right, #0c3df4 10%, #02b5ff 45%, #02b5ff, #0c3df4);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tcgbase-button.animated-gradient-bg:hover::before {
+  left: -50%;
+}
+.tcgbase-button .tcgbase-button-text {
+  position: relative;
+  z-index: 2;
+}
+.tcgbase-button .tcgbase-button-icon {
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.tcgbase-button:hover .hover-animation-right-to-left {
+  animation: RL_smooth 1s ease-in-out infinite alternate both;
+}
+.tcgbase-button.animated-icon .tcgbase-button-content-wrapper .tcgbase-button-icon {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.tcgbase-button.animated-icon .tcgbase-button-content-wrapper .tcgbase-button-icon:first-of-type {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.tcgbase-button.animated-icon .tcgbase-button-content-wrapper .tcgbase-button-icon:last-of-type {
+  opacity: 1;
+  transform: translateX(0);
+}
+.tcgbase-button.animated-icon:hover .tcgbase-button-content-wrapper {
+  padding-left: 10px;
+}
+.tcgbase-button.animated-icon:hover .tcgbase-button-content-wrapper .tcgbase-button-icon:first-of-type {
+  opacity: 1;
+  transform: translateX(0);
+}
+.tcgbase-button.animated-icon:hover .tcgbase-button-content-wrapper .tcgbase-button-icon:last-of-type {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+/* ==============================================================================================================================
+														[ * Contact Form ]
+===============================================================================================================================*/
+.tcg-contact-form-wrapper {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tcg-contact-form .elementor-form-fields-wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+.tcg-contact-form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.tcg-contact-form .name-field-double {
+  display: flex;
+  gap: 10px;
+}
+.tcg-contact-form .tcg-field-group {
+  margin-bottom: 15px;
+}
+.tcg-contact-form .tcg-field-group .tcg-form-control-checkbox {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  list-style: none;
+  font-size: 16px;
+  color: #333;
+  font-weight: normal;
+  cursor: pointer;
+}
+.tcg-contact-form .tcg-field-group .tcg-form-control-checkbox input[type=checkbox] {
+  margin-inline-end: 10px;
+}
+.tcg-contact-form .tcg-field-group .tcg-form-control-checkbox > * {
+  cursor: pointer;
+}
+.tcg-contact-form .tcg-field-group > label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+.tcg-contact-form .tcg-field-group .tcg-input, .tcg-contact-form .tcg-field-group textarea, .tcg-contact-form .tcg-field-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+.tcg-contact-form .tcg-field-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.tcg-contact-form .tcg-button-wrapper-full-width {
+  width: 100%;
+}
+.tcg-contact-form .tcg-button {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transform: perspective(var(--e-transform-tcg-contact-form-tcg-submit-button-perspective, 0)) rotate(var(--e-transform-tcg-contact-form-tcg-submit-button-rotateZ, 0)) rotateX(var(--e-transform-tcg-contact-form-tcg-submit-button-rotateX, 0)) rotateY(var(--e-transform-tcg-contact-form-tcg-submit-button-rotateY, 0)) translate(var(--e-transform-tcg-contact-form-tcg-submit-button-translate, 0)) translateX(var(--e-transform-tcg-contact-form-tcg-submit-button-translateX, 0)) translateY(var(--e-transform-tcg-contact-form-tcg-submit-button-translateY, 0)) scaleX(calc(var(--e-transform-tcg-contact-form-tcg-submit-button-flipX, 1) * var(--e-transform-tcg-contact-form-tcg-submit-button-scaleX, var(--e-transform-tcg-contact-form-tcg-submit-button-scale, 1)))) scaleY(calc(var(--e-transform-tcg-contact-form-tcg-submit-button-flipY, 1) * var(--e-transform-tcg-contact-form-tcg-submit-button-scaleY, var(--e-transform-tcg-contact-form-tcg-submit-button-scale, 1)))) skewX(var(--e-transform-tcg-contact-form-tcg-submit-button-skewX, 0)) skewY(var(--e-transform-tcg-contact-form-tcg-submit-button-skewY, 0));
+}
+.tcg-contact-form .tcg-button.tcg-button-full-width {
+  width: 100%;
+}
+.tcg-contact-form .tcg-button:hover {
+  background-color: #005bb5;
+}
+
+/* ==============================================================================================================================
+														[ * Contact Form ]
+===============================================================================================================================*/
+.tcg-newsletter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.tcg-newsletter-wrapper .tcg-position-relative {
+  position: relative;
+}
+.tcg-newsletter-wrapper .tcg-mailchimp {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-input-wrapper {
+  width: 100%;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-before-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-before-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-after-text {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+.tcg-newsletter-wrapper .tcg-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.tcg-newsletter-wrapper .tcg-button.tcg-button-primary {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tcg-newsletter-wrapper .tcg-button.tcg-button-primary:hover {
+  background-color: #005bb5;
+}
+.tcg-newsletter-wrapper .tcg-button .tcg-newsletter-btn-icon {
+  margin-right: 8px;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-checkbox-wrapper input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  box-shadow: unset;
+}
+.tcg-newsletter-wrapper .tcg-newsletter-checkbox-wrapper label {
+  color: #666;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ==============================================================================================================================
+														[ * Post list ]
+===============================================================================================================================*/
+.tcg-post-list {
+  position: relative;
+}
+.tcg-post-list .form-check-input {
+  display: none;
+  opacity: 0;
+}
+.tcg-post-list .author .me-20 {
+  margin-inline-end: 20px;
+}
+.tcg-post-list .author .icon-50 {
+  width: 50px;
+  height: 50px;
+}
+.tcg-post-list .author .icon-50 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tcg-post-list .row .card_container:last-child .separator {
+  border-bottom: 0;
+}
+.tcg-post-list .before_dot {
+  padding-left: 15px;
+}
+.tcg-post-list .before_dot::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+}
+.tcg-post-list .category-date {
+  position: relative;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: flex;
+}
+.tcg-post-list .category-date .tags .icon .icon-10 {
+  width: 10px;
+  height: 10px;
+}
+.tcg-post-list .card_container {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+.tcg-post-list .separator {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-bottom: 1px solid #d9d9d9;
+  margin-top: 0 !important;
+}
+.tcg-post-list .separator .post-info {
+  gap: 3px !important;
+}
+.tcg-post-list .display_row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.tcg-post-list .display_row .post-info {
+  margin-right: 25px;
+  width: 30%;
+}
+.tcg-post-list .display_row .info {
+  width: 100%;
+}
+.tcg-post-list .blog-card .more-btn {
+  margin-top: 40px;
+  padding-top: 20px;
+  display: block;
+  border-top: 1px solid rgba(153, 153, 153, 0.2);
+  font-weight: bold;
+}
+.tcg-post-list .blog-card .more-btn:hover {
+  color: var(--color-main);
+  border-color: #000;
+}
+.tcg-post-list .blog-card .post-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+.tcg-post-list .blog-card .post-info .tags a {
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  border-radius: 30px;
+  padding: 7px 10px;
+  font-weight: bold;
+}
+.tcg-post-list .blog-card .post-info .tags .icon .icon-10 {
+  width: 10px;
+  height: 10px;
+}
+.tcg-post-list .blog-card .img {
+  height: 275px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.tcg-post-list .blog-card .img .tags {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.tcg-post-list .blog-card .img .tags a {
+  font-size: 12px;
+  color: #fff;
+  background: var(--color-main);
+  border-radius: 30px;
+  padding: 6px 10px;
+  font-weight: 400;
+}
+.tcg-post-list .blog-card .img .vid-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 10;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2666666667);
+}
+.tcg-post-list .blog-card .img .icon-60 {
+  width: 60px;
+  height: 60px;
+}
+.tcg-post-list .blog-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tcg-post-list .blog-card .img .vid-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 10;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2666666667);
+}
+.tcg-post-list .blog-card .mt-10 {
+  margin-top: 10px !important;
+}
+.tcg-post-list .blog-card .mb-15 {
+  margin-bottom: 15px;
+}
+.tcg-post-list .blog-card .info {
+  margin-top: 20px;
+}
+.tcg-post-list .blog-card .info .blog-card-title {
+  font-size: 19px;
+  color: #000;
+  font-weight: 600;
+  display: inline-block;
+}
+.tcg-post-list .blog-card .info .text {
+  font-size: 14px;
+  margin-top: 15px;
+  color: #666;
+}
+.tcg-post-list .blog-card .info .btm-inf {
+  font-size: 11px;
+  color: #000;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+  .tcg-post-list .blog-card {
+    margin-top: 50px;
+  }
+}
+body.tcg-dark-mode .tcg-post-list .blog-card .info .blog-card-title {
+  color: #fff;
+}
+body.tcg-dark-mode .tcg-post-list .blog-card .info .text {
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.tcg-auto-mode .tcg-post-list .blog-card .info .blog-card-title {
+    color: #fff;
+  }
+  body.tcg-auto-mode .tcg-post-list .blog-card .info .text {
+    color: #fff;
+  }
+}
+/* ==============================================================================================================================
+														[ * Dynamic Post Meta ]
+===============================================================================================================================*/
+.tcg-dynamic-post-meta-text {
+  margin: 0px;
+  padding: 0px;
+}
+
+.woo-price {
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+.woo-price .sale-price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: var(--color-primary);
+  margin: 0rem 0.25rem 0rem 0rem;
+}
+.woo-price .old-price {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: line-through;
+  line-height: 1.5em;
+  color: #999999;
+}
+
+.woo-reviews {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+.woo-reviews .stars {
+  margin-right: 0.25rem;
+  font-size: 14px;
+  color: var(--color-primary);
+}
+.woo-reviews .stars svg {
+  height: 16px;
+  width: 16px;
+  fill: var(--color-primary);
+}
+.woo-reviews .txt {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #999999;
+}
+
+a.tcg-post-info {
+  display: inline-block !important;
+}
+
+/* ==============================================================================================================================
+														[ * portfolio-grid ]
+===============================================================================================================================*/
+.tcg-portfolio-adv.tcg-masonry .gridss .inner {
+  height: auto;
+}
+.tcg-portfolio-adv .filtering .filter {
+  padding: 11px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  display: inline-block;
+}
+.tcg-portfolio-adv .filtering span {
+  font-weight: 500;
+  font-size: 13px;
+  margin: 0 20px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.7;
+}
+.tcg-portfolio-adv .filtering span.active {
+  opacity: 1;
+}
+.tcg-portfolio-adv .filtering span.text {
+  pointer-events: none;
+}
+.tcg-portfolio-adv .gridss {
+  width: 100%;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img {
+  position: relative;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1d1d1d;
+  opacity: 0;
+  transition: all 0.4s;
+  pointer-events: none;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img a {
+  width: 100%;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img .info {
+  display: inline-flex;
+  color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.4s;
+  z-index: 2;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img .info .icon {
+  transform: perspective(var(--e-transform-tcg-portfolio-adv-icon-perspective, 0)) rotate(var(--e-transform-tcg-portfolio-adv-icon-rotateZ, 0)) rotateX(var(--e-transform-tcg-portfolio-adv-icon-rotateX, 0)) rotateY(var(--e-transform-tcg-portfolio-adv-icon-rotateY, 0)) translate(var(--e-transform-tcg-portfolio-adv-icon-translate, 0)) translateX(var(--e-transform-tcg-portfolio-adv-icon-translateX, 0)) translateY(var(--e-transform-tcg-portfolio-adv-icon-translateY, 0)) scaleX(calc(var(--e-transform-tcg-portfolio-adv-icon-flipX, 1) * var(--e-transform-tcg-portfolio-adv-icon-scaleX, var(--e-transform-tcg-portfolio-adv-icon-scale, 1)))) scaleY(calc(var(--e-transform-tcg-portfolio-adv-icon-flipY, 1) * var(--e-transform-tcg-portfolio-adv-icon-scaleY, var(--e-transform-tcg-portfolio-adv-icon-scale, 1)))) skewX(var(--e-transform-tcg-portfolio-adv-icon-skewX, 0)) skewY(var(--e-transform-tcg-portfolio-adv-icon-skewY, 0));
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img .info .title {
+  transform: perspective(var(--e-transform-tcg-portfolio-adv-title-perspective, 0)) rotate(var(--e-transform-tcg-portfolio-adv-title-rotateZ, 0)) rotateX(var(--e-transform-tcg-portfolio-adv-title-rotateX, 0)) rotateY(var(--e-transform-tcg-portfolio-adv-title-rotateY, 0)) translate(var(--e-transform-tcg-portfolio-adv-title-translate, 0)) translateX(var(--e-transform-tcg-portfolio-adv-title-translateX, 0)) translateY(var(--e-transform-tcg-portfolio-adv-title-translateY, 0)) scaleX(calc(var(--e-transform-tcg-portfolio-adv-title-flipX, 1) * var(--e-transform-tcg-portfolio-adv-title-scaleX, var(--e-transform-tcg-portfolio-adv-title-scale, 1)))) scaleY(calc(var(--e-transform-tcg-portfolio-adv-title-flipY, 1) * var(--e-transform-tcg-portfolio-adv-title-scaleY, var(--e-transform-tcg-portfolio-adv-title-scale, 1)))) skewX(var(--e-transform-tcg-portfolio-adv-title-skewX, 0)) skewY(var(--e-transform-tcg-portfolio-adv-title-skewY, 0));
+  transform-origin: var(--e-transform-tcg-portfolio-adv-title-origin-y) var(--e-transform-tcg-portfolio-adv-title-origin-x);
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img:hover:after {
+  opacity: 0.2;
+}
+.tcg-portfolio-adv .gridss .info-overlay .item-img:hover .info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tcg-portfolio-adv .gridss .inner {
+  height: 400px;
+}
+.tcg-portfolio-adv .gridss .inner .clippy-img {
+  clip-path: polygon(25% 0, 75% 0, 75% 100%, 25% 100%);
+  opacity: 0;
+  transform: rotate(-7deg) scale(1.3);
+  transition: all 1s ease;
+  transition-delay: 0.2s;
+}
+.tcg-portfolio-adv .gridss .inner .clippy-img.animated {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 1;
+  transform: rotate(0) scale(1);
+  transform: perspective(var(--e-transform-tcg-portfolio-adv-img-perspective, 0)) rotate(var(--e-transform-tcg-portfolio-adv-img-rotateZ, 0)) rotateX(var(--e-transform-tcg-portfolio-adv-img-rotateX, 0)) rotateY(var(--e-transform-tcg-portfolio-adv-img-rotateY, 0)) translate(var(--e-transform-tcg-portfolio-adv-img-translate, 0)) translateX(var(--e-transform-tcg-portfolio-adv-img-translateX, 0)) translateY(var(--e-transform-tcg-portfolio-adv-img-translateY, 0)) scaleX(calc(var(--e-transform-tcg-portfolio-adv-img-flipX, 1) * var(--e-transform-tcg-portfolio-adv-img-scaleX, var(--e-transform-tcg-portfolio-adv-img-scale, 1)))) scaleY(calc(var(--e-transform-tcg-portfolio-adv-img-flipY, 1) * var(--e-transform-tcg-portfolio-adv-img-scaleY, var(--e-transform-tcg-portfolio-adv-img-scale, 1)))) skewX(var(--e-transform-tcg-portfolio-adv-img-skewX, 0)) skewY(var(--e-transform-tcg-portfolio-adv-img-skewY, 0));
+}
+.tcg-portfolio-adv .gridss .inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: perspective(var(--e-transform-tcg-portfolio-adv-img-perspective, 0)) rotate(var(--e-transform-tcg-portfolio-adv-img-rotateZ, 0)) rotateX(var(--e-transform-tcg-portfolio-adv-img-rotateX, 0)) rotateY(var(--e-transform-tcg-portfolio-adv-img-rotateY, 0)) translate(var(--e-transform-tcg-portfolio-adv-img-translate, 0)) translateX(var(--e-transform-tcg-portfolio-adv-img-translateX, 0)) translateY(var(--e-transform-tcg-portfolio-adv-img-translateY, 0)) scaleX(calc(var(--e-transform-tcg-portfolio-adv-img-flipX, 1) * var(--e-transform-tcg-portfolio-adv-img-scaleX, var(--e-transform-tcg-portfolio-adv-img-scale, 1)))) scaleY(calc(var(--e-transform-tcg-portfolio-adv-img-flipY, 1) * var(--e-transform-tcg-portfolio-adv-img-scaleY, var(--e-transform-tcg-portfolio-adv-img-scale, 1)))) skewX(var(--e-transform-tcg-portfolio-adv-img-skewX, 0)) skewY(var(--e-transform-tcg-portfolio-adv-img-skewY, 0));
+}
+
+.tcg-metro .gridss .info-overlay .item-img {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.tcg-metro .gridss .info-overlay .item-img:hover:after {
+  opacity: 0.8;
+}
+.tcg-metro .gridss .info-overlay .item-img:hover .info h6,
+.tcg-metro .gridss .info-overlay .item-img:hover .info .tag {
+  transform: translateY(0);
+  opacity: 1;
+}
+.tcg-metro .gridss .info-overlay .item-img:hover .info .tag {
+  transition-delay: 0.2s;
+}
+.tcg-metro .gridss .info-overlay .item-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1d1d1d;
+  transition: all 0.4s;
+  pointer-events: none;
+  opacity: 0;
+}
+.tcg-metro .gridss .info-overlay .item-img .info {
+  color: #fff !important;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 2;
+}
+.tcg-metro .gridss .info-overlay .item-img .info h6,
+.tcg-metro .gridss .info-overlay .item-img .info .tag {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.6s;
+}
+.tcg-metro .gridss .info-overlay .item-img .info h6 a,
+.tcg-metro .gridss .info-overlay .item-img .info .tag a {
+  color: #fff !important;
+}
+.tcg-metro .gridss .info-overlay .item-img .info .tag {
+  transition-delay: 0;
+}
+.tcg-metro .gridss .info-overlay .item-img a {
+  height: 100%;
+  display: inline-block;
+}
+.tcg-metro .gridss .inner {
+  height: 100% !important;
+}
+.tcg-metro .items:nth-child(1) {
+  height: 530px;
+}
+.tcg-metro .items:nth-child(2) {
+  height: 250px;
+}
+.tcg-metro .items:nth-child(3) {
+  height: 530px;
+}
+.tcg-metro .items:nth-child(4) {
+  height: 250px;
+}
+.tcg-metro .items:nth-child(5) {
+  height: 530px;
+}
+.tcg-metro .items:nth-child(6) {
+  height: 250px;
+}
+.tcg-metro .items:nth-child(7) {
+  height: 250px;
+}
+.tcg-metro .items:nth-child(8) {
+  height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .tcg-portfolio-adv .gallery, .tcg-metro .gallery {
+    justify-content: center !important;
+  }
+  .tcg-portfolio-adv .filtering .filter, .tcg-metro .filtering .filter {
+    padding: 10px;
+    width: 100%;
+  }
+  .tcg-portfolio-adv .filtering .filter span, .tcg-metro .filtering .filter span {
+    margin: 0 10px;
+  }
+  .tcg-portfolio-adv .filtering .filter span.text, .tcg-metro .filtering .filter span.text {
+    display: none;
+  }
+}
+/* ==============================================================================================================================
+														[ * offcanvas ]
+===============================================================================================================================*/
+/*==============================================================
+						Offcanvas
+==============================================================*/
+/** ===== OffCanvas ===== **/
+.tcg-offcanvas .offcanvas-toggle.toggle-center {
+  margin: auto;
+}
+.tcg-offcanvas .offcanvas-toggle.toggle-right {
+  margin-left: auto;
+}
+.tcg-offcanvas .offcanvas-toggle.toggle-left {
+  margin-right: auto;
+}
+
+/* ==============================================================================================================================
+														[ * Dynamic Slider ]
+===============================================================================================================================*/
+/*----------------------------- TCG Slider Arrows Style -----------------------------*/
+.tcg-dynamic-slider .swiper-container {
+  overflow: hidden;
+}
+.tcg-dynamic-slider .swiper-container:not(.swiper-container-initialized) > .swiper-wrapper,
+.tcg-dynamic-slider .swiper:not(.swiper-initialized) > .swiper-wrapper {
+  overflow: unset;
+}
+.tcg-dynamic-slider .swiper-material-content {
+  overflow: hidden;
+}
+.tcg-dynamic-slider.dynamic-slider-active-content .swiper-slide:not(.swiper-slide-active) .dynamic-slider-content {
+  opacity: 0;
+  animation: fadeOut 0.5s;
+}
+.tcg-dynamic-slider.dynamic-slider-active-content .swiper-slide:not(.swiper-slide-active) .dynamic-slider-content {
+  display: none;
+}
+.tcg-dynamic-slider.dynamic-slider-active-content .swiper-slide.swiper-slide-active .dynamic-slider-content {
+  opacity: 1;
+  animation: fadeIn 0.5s;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows {
+  color: #ccc;
+  font-size: 13px;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  margin: 5px 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  border-radius: 50%;
+  background: none;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows:after {
+  display: none;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows.swiper-button-next .tcg-dynamic-slider-arrow-text {
+  margin-right: 8px;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+}
+.tcg-dynamic-slider .tcg-dynamic-slider-arrows.swiper-button-prev .tcg-dynamic-slider-arrow-text {
+  margin-left: 8px;
+}
+.tcg-dynamic-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto;
+  display: block;
+  right: 50%;
+  left: unset;
+  transform: translateX(50%);
+}
+.tcg-dynamic-slider .swiper-pagination-bullets.swiper-pagination-vertical {
+  width: auto;
+  display: block;
+  top: 50%;
+  bottom: unset;
+  transform: translateY(50%);
+}
+.tcg-dynamic-slider .swiper-pagination-fraction {
+  width: auto;
+  display: block;
+  right: 50%;
+  left: unset;
+  transform: translateX(50%);
+}
+.tcg-dynamic-slider .swiper-scrollbar.scrollbar-horizontal {
+  position: absolute;
+  bottom: 15px;
+  z-index: 10;
+  left: unset;
+  margin: 0 1%;
+  width: 98%;
+  height: 4.5px;
+}
+.tcg-dynamic-slider .swiper-scrollbar.scrollbar-horizontal .swiper-scrollbar-drag {
+  height: 4.5px;
+}
+.tcg-dynamic-slider .swiper-scrollbar.scrollbar-vertical {
+  position: absolute;
+  right: 15px;
+  z-index: 10;
+  top: 0;
+  margin: 1% 0;
+  display: block;
+  height: 94%;
+  width: 4.5px;
+}
+.tcg-dynamic-slider .swiper-scrollbar.scrollbar-vertical .swiper-scrollbar-drag {
+  width: 4.5px;
+}
+.tcg-dynamic-slider .custom-swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  transform: unset;
+}
+.tcg-dynamic-slider.tcg-float-cursor-container {
+  cursor: none;
+}
+.tcg-dynamic-slider.tcg-float-cursor-container .tcg-float-cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  z-index: 30;
+  pointer-events: none;
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.4s ease, transform 0.4s ease, all 0.1s linear;
+}
+.tcg-dynamic-slider .arrows-pagination-container {
+  z-index: 1;
+}
+
+/*----------------------------- TCG Parallax Slider Style -----------------------------*/
+.tcg-dynamic-parallax-slider {
+  position: relative;
+}
+.tcg-dynamic-parallax-slider .swiper-container {
+  position: relative;
+}
+.tcg-dynamic-parallax-slider .swiper-slide {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.tcg-dynamic-parallax-slider .swiper-slide .tcg-dynamic-slide.tcg-dynamic-slider-parallex {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.tcg-dynamic-parallax-slider .swiper-slide {
+  z-index: 1;
+}
+.tcg-dynamic-parallax-slider .swiper-slide-active {
+  z-index: 3;
+}
+
+/* ==============================================================================================================================
+														[ * Dynamic Tabs ]
+===============================================================================================================================*/
+.tcg-dynamic-tabs .nav-pills .nav-item {
+  list-style: none;
+}
+.tcg-dynamic-tabs .nav-pills .nav-item .nav-link {
+  background-color: transparent;
+  border: 0;
+  color: #111;
+  opacity: 0.6;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.tcg-dynamic-tabs .nav-pills .nav-item .nav-link.active {
+  opacity: 1;
+}
+
+/* ==============================================================================================================================
+														[ * Container Features ]
+===============================================================================================================================*/
+.tc-container-advanced-hover:not(.tcg-container-adv-hover-active) {
+  opacity: 0;
+  animation: fadeOut 0.5s;
+}
+
+.tc-container-advanced-hover:not(.tcg-container-adv-hover-active).hidden {
+  display: none;
+}
+
+.tcg-container-adv-hover-active {
+  opacity: 1;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ==============================================================================================================================
+														[ * gallery tabs ]
+===============================================================================================================================*/
+.tcg-gallery-tabs .row.md-marg {
+  margin-left: -25px !important;
+  margin-right: -25px !important;
+}
+.tcg-gallery-tabs .row.md-marg > * {
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+.tcg-gallery-tabs .sec-head {
+  margin-bottom: 80px;
+}
+.tcg-gallery-tabs .sec-head .sub-title {
+  margin-bottom: 25px !important;
+  color: #14cf93;
+}
+.tcg-gallery-tabs .sec-head .bord {
+  position: relative;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.tcg-gallery-tabs .sec-head .bord:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tcg-gallery-tabs .sec-head .buttons {
+  margin-left: auto;
+}
+.tcg-gallery-tabs .item {
+  margin-top: 50px;
+  position: relative;
+}
+.tcg-gallery-tabs .item .img {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.tcg-gallery-tabs .item h6 {
+  font-size: 18px;
+}
+.tcg-gallery-tabs .item .new {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: #ff2300;
+}
+.tcg-gallery-tabs .filter span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  margin: 0;
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.tcg-gallery-tabs .filter span.active {
+  opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.tcg-gallery-tabs .filter span:after {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .tcg-demos .sec-head .main-title {
+    margin-bottom: 15px;
+  }
+  .tcg-demos .row.md-marg {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+  .tcg-demos .row.md-marg > * {
+    padding-left: -15px !important;
+    padding-right: -15px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tcg-demos .sec-head .bord .buttons {
+    margin-top: 15px !important;
+  }
+  .tcg-demos .sec-head .bord {
+    display: block;
+  }
+}
+/* ==============================================================================================================================
+														[ * post image ]
+===============================================================================================================================*/
+.e-con:hover .elementor-widget-tcg-post-featured-image > .elementor-widget-container > .tcg-post-image.selector-type-container.tcg-post-image-container-active .tcg-post-image-wrapper::after {
+  display: block;
+}
+.e-con:hover .elementor-widget-tcg-post-featured-image > .elementor-widget-container > .tcg-post-image.selector-type-container.tcg-post-image-container-active .image-hover-container {
+  display: block;
+  opacity: 1;
+}
+
+.tcg-post-image.selector-type-image:hover .tcg-post-image-wrapper::after {
+  display: block;
+}
+.tcg-post-image.selector-type-image:hover .image-hover-container {
+  display: block;
+  opacity: 1;
+}
+.tcg-post-image .tcg-post-image-wrapper::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: none;
+}
+.tcg-post-image .image-hover-container {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.tcg-post-image .image-hover-container svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+/* ==============================================================================================================================
+														[ * dynamic query ]
+===============================================================================================================================*/
+.tcg-dynamic-query .pagination {
+  margin: 0px;
+  margin-top: 30px;
+}
+.tcg-dynamic-query .pagination a {
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin: 3px;
+  background-color: #f5f5f5;
+  color: #181C20;
+  font-weight: 400;
+  display: inline-block;
+}
+.tcg-dynamic-query .pagination a.current-page, .tcg-dynamic-query .pagination a:hover {
+  background-color: var(--color-main);
+  color: #fff;
+}
+.tcg-dynamic-query .tcg-dynamic-query-filters {
+  margin-bottom: 40px;
+}
+.tcg-dynamic-query .tcg-dynamic-query-filters .filter-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: #111;
+  opacity: 0.6;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-inline-end: 16px;
+}
+.tcg-dynamic-query .tcg-dynamic-query-filters .filter-btn.active {
+  opacity: 1;
+}
+.tcg-dynamic-query .tcg-dynamic-query-item {
+  position: relative;
+}
+.tcg-dynamic-query .gallery .tcg-dynamic-query-item {
+  position: relative;
+}
+
+.elementor-widget-tcg-dynamic-query {
+  width: 100%;
+}
+
+/* ==============================================================================================================================
+														[   The End   ]
+===============================================================================================================================*/
+
+/*# sourceMappingURL=style.css.map */

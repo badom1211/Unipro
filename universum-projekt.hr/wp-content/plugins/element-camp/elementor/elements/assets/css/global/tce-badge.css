@@ -1,0 +1,27 @@
+/* Panel Style */
+.elementor-panel .tce-widget-badge::after{
+    content: 'TCE';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    background-image: linear-gradient(100deg, #086AD8 0%, #5B43C3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Navigator Style */
+.elementor-navigator__element__element-type .tce-widget-badge::after{
+    content: 'TCE';
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    right: 5px;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    background-image: linear-gradient(100deg, #086AD8 0%, #5B43C3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
